@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-input">
     <label for="login">{{ label }}</label>
     <input
       id="login"
@@ -21,3 +21,10 @@ defineEmits<{
   (event: 'update:value', value: string): void
 }>()
 </script>
+<style lang="scss">
+div.text-input {
+  label {
+    display: block;
+  }
+}
+</style>
