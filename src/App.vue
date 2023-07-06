@@ -21,7 +21,11 @@ onUnmounted(() => {
   window.removeEventListener('resize', appHeight)
 })
 </script>
-<style scoped>
+<style>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .app {
   height: 100vh;
   height: var(--app-height);

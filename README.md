@@ -7,11 +7,12 @@ The setup of the projects on Vue js framework with descriptions, linters, tests 
 - [x] TS
 - [x] vue-router
 - [x] SCSS
-- [ ] Tailwind
+- [x] Tailwind
+- [ ] Tests
 - [ ] Linter
 - [ ] Pinia
 - [ ] SVG-loader
-- [ ] Tests
+- [ ] i18n
 - [ ] odevlib api integrations
 
 TODO in the future:

@@ -1,8 +1,13 @@
 <template>
-  <div class="text-input">
-    <label for="login">{{ label }}</label>
+  <div class="px-2">
+    <label
+      for="login"
+      class="mb-2 block"
+      >{{ label }}</label
+    >
     <input
       id="login"
+      class="outline-yellow-500 border-yellow-300 border-1 border rounded px-2"
       type="text"
       :value="value"
       @update:value="(v: string) => $emit('update:value', v)"
@@ -21,10 +26,4 @@ defineEmits<{
   (event: 'update:value', value: string): void
 }>()
 </script>
-<style lang="scss">
-div.text-input {
-  label {
-    display: block;
-  }
-}
-</style>
+<style lang="scss"></style>
