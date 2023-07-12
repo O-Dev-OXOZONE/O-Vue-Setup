@@ -8,7 +8,7 @@ The setup of the projects on Vue js framework with descriptions, linters, tests 
 - [x] vue-router
 - [x] SCSS
 - [x] Tailwind
-- [ ] Tests
+- [x] Tests
 - [ ] Linter
 - [ ] Pinia
 - [ ] SVG-loader
@@ -22,8 +22,9 @@ TODO in the future:
 Additional comments:
 
 - `tsconfig.node.ts` is needed due the following issue: https://github.com/vitejs/vite/issues/2031
+- in tests imports from the `vitest` are not required due to `globals: true` option (TODO: watch the package for zero-imports of other modules - https://github.com/antfu/unplugin-auto-import/)
 
-**Warning: node version 16+**
+  **Warning: node version 16+**
 
 ## Recommended IDE Setup
 

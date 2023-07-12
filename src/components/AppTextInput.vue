@@ -10,7 +10,7 @@
       class="outline-yellow-500 border-yellow-300 border-1 border rounded px-2"
       type="text"
       :value="value"
-      @update:value="(v: string) => $emit('update:value', v)"
+      @input="updateValue"
       :password="isPassword"
     />
   </div>
@@ -22,8 +22,12 @@ defineProps<{
   isPassword?: boolean
 }>()
 
-defineEmits<{
+const emit = defineEmits<{
   (event: 'update:value', value: string): void
 }>()
+
+const updateValue = (v: Event) => {
+  emit('update:value', (v.target as HTMLInputElement).value)
+}
 </script>
 <style lang="scss"></style>
