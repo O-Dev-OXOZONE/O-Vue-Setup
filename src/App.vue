@@ -22,7 +22,7 @@ onUnmounted(() => {
   window.removeEventListener('resize', appHeight)
 })
 </script>
-<style>
+<style lang="scss">
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

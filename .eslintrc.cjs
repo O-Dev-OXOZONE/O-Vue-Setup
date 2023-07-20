@@ -68,6 +68,52 @@ module.exports = {
       },
     ],
     'vue/singleline-html-element-content-newline': 'off',
+    'vue/block-lang': [
+      'error',
+      {
+        script: {
+          lang: 'ts',
+        },
+        style: {
+          lang: 'scss',
+        },
+      },
+    ],
+    'vue/component-api-style': ['error', ['script-setup']],
+    // 'vue/component-name-in-template-casing': ['error', 'kebab-case'], // for SW
+    'vue/custom-event-name-casing': ['error', 'kebab-case'],
+    'vue/define-emits-declaration': ['warn', 'type-based'], // now - warn, then - error
+    'vue/define-props-declaration': ['warn', 'type-based'], // now - warn, then - error
+    'vue/html-button-has-type': 'warn',
+    'vue/html-comment-content-spacing': ['error', 'always'],
+    'vue/html-comment-indent': ['error', 2],
+    // 'vue/no-bare-strings-in-template': 'error', // for SW
+    'vue/no-empty-component-block': 'error',
+    'vue/no-multiple-objects-in-class': 'error',
+    'vue/no-required-prop-with-default': 'error',
+    'vue/no-restricted-html-elements': ['error', 'b', 'i'], // semantics !
+    'vue/no-static-inline-styles': [
+      'error',
+      {
+        allowBinding: true,
+      },
+    ],
+    'vue/no-template-target-blank': 'error', // semantics
+    // 'vue/no-undef-components': 'error', // due to global names
+    'vue/no-undef-properties': 'error',
+    'vue/no-unused-properties': 'error',
+    'vue/no-unused-refs': 'error',
+    // 'vue/no-use-v-else-with-v-for': 'warn',
+    'vue/no-useless-mustaches': 'error', // is related with vue/no-bare-strings-in-template, forces to update the config for a project
+    // "vue/no-restricted-class": ["error", 'h-screen'], // for SW
+    'vue/no-useless-v-bind': 'error',
+    'vue/padding-line-between-blocks': ['error', 'never'],
+    'vue/prefer-separate-static-class': 'warn',
+    'vue/prefer-true-attribute-shorthand': 'warn',
+    'vue/require-emit-validator': 'error',
+    // 'vue/require-typed-ref': 'warn', // in the future
+    'vue/no-v-text': 'error',
+    'vue/v-on-handler-style': ['error', ['method', 'inline']],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
   },

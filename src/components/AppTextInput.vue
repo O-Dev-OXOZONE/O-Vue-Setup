@@ -3,7 +3,9 @@
     <label
       for="login"
       class="mb-2 block"
-    >{{ label }}</label>
+    >
+      {{ label }}
+    </label>
     <input
       id="login"
       class="outline-yellow-500 border-yellow-300 border-1 border rounded px-2"
@@ -31,4 +33,3 @@ const updateValue = (v: Event) => {
   emit('update:value', (v.target as HTMLInputElement).value)
 }
 </script>
-<style lang="scss"></style>
