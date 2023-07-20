@@ -1,12 +1,13 @@
 import { mount } from '@vue/test-utils'
-import Login from '../Login.vue'
 import { h } from 'vue'
 
-describe('Login', () => {
-  const wrapper = mount(Login, {
+import LoginForm from '../LoginForm.vue'
+
+describe('LoginForm', () => {
+  const wrapper = mount(LoginForm, {
     global: {
       stubs: {
-        AppTextInput: h('div', { class: 'my-stub' }, "I'm input"),
+        AppTextInput: h('div', { class: 'my-stub' }, 'I\'m input'),
       },
     },
   })

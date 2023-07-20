@@ -3,15 +3,14 @@
     <label
       for="login"
       class="mb-2 block"
-      >{{ label }}</label
-    >
+    >{{ label }}</label>
     <input
       id="login"
       class="outline-yellow-500 border-yellow-300 border-1 border rounded px-2"
       type="text"
       :value="value"
-      @input="updateValue"
       :password="isPassword"
+      @input="updateValue"
     />
   </div>
 </template>
@@ -22,9 +21,11 @@ defineProps<{
   isPassword?: boolean
 }>()
 
-const emit = defineEmits<{
-  (event: 'update:value', value: string): void
-}>()
+interface Emits {
+  (_event: 'update:value', _value: string): void
+}
+
+const emit = defineEmits<Emits>()
 
 const updateValue = (v: Event) => {
   emit('update:value', (v.target as HTMLInputElement).value)

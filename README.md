@@ -9,7 +9,7 @@ The setup of the projects on Vue js framework with descriptions, linters, tests 
 - [x] SCSS
 - [x] Tailwind
 - [x] Tests
-- [ ] Linter
+- [x] Linter
 - [ ] Pinia
 - [ ] SVG-loader
 - [ ] i18n
@@ -18,6 +18,7 @@ The setup of the projects on Vue js framework with descriptions, linters, tests 
 TODO in the future:
 
 - [ ] update router to some file-system-based solution
+- [ ] pre-commit hooks https://github.com/okonet/lint-staged
 
 Additional comments:
 

@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <router-view></router-view>
+    <router-view />
   </div>
 </template>
 <script setup lang="ts">
@@ -10,6 +10,7 @@ import { onMounted, onUnmounted } from 'vue'
 const appHeight = () => {
   const doc = document.documentElement
   doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+  console.error('Ho')
 }
 
 onMounted(() => {

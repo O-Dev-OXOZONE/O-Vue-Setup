@@ -10,20 +10,27 @@
       is-password
     />
     <button type="submit">Ok</button>
+    <div v-if="value">
+      {{ value }}
+    </div>
   </form>
 </template>
 <script setup lang="ts">
-import AppTextInput from '@/components/AppTextInput.vue'
 import { computed, ref } from 'vue'
+
+import AppTextInput from '@/components/AppTextInput.vue'
 
 const login = ref('')
 const password = ref('')
+const value = ref('')
 
-const calc = computed<boolean>(() => {
-  return !!login.value && !!password.value
+const calc = computed<string>(() => {
+  if (login.value) return `${!!login.value && !!password.value}`
+  return `82167${password.value}`
 })
 
 const submit = () => {
-  console.log('submit', calc.value)
+  const a = 'v'
+  value.value = calc.value ? calc.value : a
 }
 </script>
