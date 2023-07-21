@@ -29,7 +29,7 @@ interface Emits {
 
 const emit = defineEmits<Emits>()
 
-const updateValue = (v: Event) => {
-  emit('update:value', (v.target as HTMLInputElement).value)
+const updateValue = (value: Event) => {
+  emit('update:value', (value.target as HTMLInputElement).value)
 }
 </script>

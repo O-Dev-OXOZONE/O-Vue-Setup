@@ -13,7 +13,7 @@ describe('AppTextInput', () => {
   it('show label', () => {
     expect(wrapper.text()).toContain('Test Label')
   })
-  it('value emitted', async() => {
+  it('value emitted', () => {
     wrapper.find('input').setValue('new text')
     expect(wrapper.emitted('update:value')).toEqual([['new text']])
   })

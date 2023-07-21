@@ -9,7 +9,7 @@ import { onMounted, onUnmounted } from 'vue'
 // set valid height in IOS
 const appHeight = () => {
   const doc = document.documentElement
-  doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+  doc.style.setProperty('--app-height', `${ window.innerHeight }px`)
   console.error('Ho')
 }
 
