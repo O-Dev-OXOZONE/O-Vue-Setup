@@ -242,17 +242,61 @@ module.exports = {
     'vue/v-on-handler-style': ['error', ['method', 'inline']],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
-
+    // vue eslint-based rules (just a copy from the config above)
+    'vue/array-bracket-newline': ['error', 'consistent'],
+    'vue/array-bracket-spacing': ['error', 'never'],
+    'vue/array-element-newline': ['error', 'consistent'],
+    'vue/arrow-spacing': 'error',
+    'vue/block-spacing': 'error',
+    'vue/brace-style': 'error',
+    'vue/comma-dangle': ['error', 'always-multiline'],
+    'vue/comma-spacing': 'error',
+    'vue/comma-style': ['error', 'last'],
+    'vue/dot-location': ['error', 'property'],
+    'vue/dot-notation': ['error', { allowKeywords: false }],
+    'vue/eqeqeq': 'warn',
+    'vue/func-call-spacing': 'error',
+    'vue/key-spacing': 'error',
+    'vue/keyword-spacing': 'error',
+    'vue/max-len': ['error', {
+      code: 100,
+      ignoreComments: true,
+      ignoreUrls: true,
+    }], // warning: the value is different from js-one
+    'vue/multiline-ternary': ['error', 'always-multiline'],
+    'vue/no-console': ['error', { allow: ['warn', 'error'] }],
+    'vue/no-extra-parens': 'error',
+    'vue/no-irregular-whitespace': 'error',
+    'vue/no-loss-of-precision': 'error',
+    'vue/no-sparse-arrays': 'error',
+    'vue/no-useless-concat': 'error',
+    'vue/object-curly-newline': ['error', { consistent: true }],
+    'vue/object-curly-spacing': ['error', 'always'],
+    // 'vue/object-property-newline': ['error', 'before'],
+    'vue/operator-linebreak': ['error', 'before'],
+    'vue/prefer-template': 'error',
+    'vue/quote-props': ['error', 'consistent-as-needed'],
+    'vue/space-in-parens': ['error', 'never'],
+    'vue/space-infix-ops': 'error',
+    'vue/space-unary-ops': 'error',
+    'vue/template-curly-spacing': ['error', 'always'],
   },
   overrides: [
     {
       files: ['**/__tests__/*.test.ts'],
+      extends: [
+        'eslint:recommended',
+        '@vue/typescript/recommended',
+      ],
       rules: {
         'no-magic-numbers': 'off',
       },
     },
     {
       files: ['.eslintrc.*', 'vite.config.ts'], // TODO: add other config files here
+      extends: [
+        'eslint:recommended',
+      ],
       rules: {
         'no-magic-numbers': 'off',
       },
