@@ -7,7 +7,7 @@ describe('LoginForm', () => {
   const wrapper = mount(LoginForm, {
     global: {
       stubs: {
-        AppTextInput: h('div', { class: 'my-stub' }, 'I\'m input'),
+        AppTextInput: h('div', { class: 'my-stub' }, "I'm input"),
       },
     },
   })

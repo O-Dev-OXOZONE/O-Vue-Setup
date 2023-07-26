@@ -25,12 +25,12 @@ const password = ref('')
 const value = ref('')
 
 const calc = computed<string>(() => {
-  if (login.value) return `${ !!login.value && !!password.value }`
-  return `82167${ password.value }`
+  if (login.value) return `${!!login.value && !!password.value}`
+  return `82167${password.value}`
 })
 
 const submit = () => {
-  const arr = ['a', 'b', 'c'].map(_v => `${ _v }g`)[0]
+  const arr = ['a', 'b', 'c'].map(_v => `${_v}g`)[0]
   value.value = calc.value ? calc.value : arr
 }
 </script>

@@ -20,6 +20,22 @@ TODO in the future:
 - [ ] update router to some file-system-based solution
 - [ ] pre-commit hooks https://github.com/okonet/lint-staged
 
+Linter
+
+dpendencies list
+| Dependency | Explanation |
+|------------|-------------|
+| `eslint` | static code analysis base **[100% needed]** |
+| `vue-eslint-parser` | parser for vue files **[100% needed]** |
+| `eslint-plugin-vue` | set of vue-specific eslint rules **[95% needed]** |
+|`@typescript-eslint/parser` + `@typescript-eslint/plugin` | tool to parse `.ts` files|
+| `@vue/eslint-config-typescript` | vue typescript part support **[90% needed]** |
+| [AIRBNB] `eslint-config-airbnb-base` | set of `eslint` rules, used everywhere, doesn't include react-based rules |
+| [AIRBNB] `@vue/eslint-config-airbnb` | airbnb for vue files |
+| `eslint-plugin-simple-import-sort` | plugin to detect errors in import's sorting and their auto-fix |
+|`prettier`| questionable, but popular tool for code-formatting. The main feature - `max-len` issue fixing|
+| `eslint-config-prettier` && `eslint-plugin-prettier`| to make `prettier work` |
+
 Additional comments:
 
 - `tsconfig.node.ts` is needed due the following issue: https://github.com/vitejs/vite/issues/2031

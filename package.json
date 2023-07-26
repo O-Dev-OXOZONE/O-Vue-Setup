@@ -8,8 +8,8 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "lint:ci": "eslint --ext .js,.vue,.ts src",
-    "lint:precommit": "eslint --ext .js,.vue,.ts src --fix"
+    "lint:ci": "eslint .",
+    "lint:precommit": "eslint . --fix"
   },
   "dependencies": {
     "vue": "^3.2.47",
@@ -17,11 +17,10 @@
   },
   "devDependencies": {
     "@types/node": "^20.3.3",
-    "@typescript-eslint/parser": "^5.62.0",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vitest/coverage-istanbul": "^0.33.0",
     "@vitest/ui": "^0.33.0",
-    "@vue/eslint-config-typescript": "^11.0.3",
+    "@vue/eslint-config-airbnb-with-typescript": "^7.0.0",
     "@vue/test-utils": "^2.4.0",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",
