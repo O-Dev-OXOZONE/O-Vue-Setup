@@ -7,9 +7,8 @@ module.exports = {
   extends: [
     '@vue/eslint-config-airbnb-with-typescript',
     'plugin:vue/vue3-recommended',
-    'prettier',
   ],
-  plugins: ['prettier', 'simple-import-sort'],
+  plugins: ['simple-import-sort'],
   // https://eslint.vuejs.org/user-guide/#how-to-use-a-custom-parser
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -20,7 +19,6 @@ module.exports = {
   },
   rules: {
     // plugins
-    'prettier/prettier': 'error',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
     // off - block
@@ -29,6 +27,27 @@ module.exports = {
     'no-nested-ternary': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/lines-between-class-members': 'off',
+    // lint - block
+    'semi': ['error', 'never'],
+    '@typescript-eslint/semi': ['error', 'never'],
+    'no-unexpected-multiline': 'off',
+    'quote-props': ['error', 'consistent'],
+    'implicit-arrow-linebreak': 'off',
+    'function-paren-newline': 'off',
+    'operator-linebreak': 'off',
+    'arrow-parens': ['error', 'as-needed'],
+    'object-curly-newline': 'off',
+    'vue/operator-linebreak': 'off',
+    'nonblock-statement-body-position': 'off',
+    'curly': 'off',
+    '@typescript-eslint/indent': 'off',
+    'no-confusing-arrow': 'off',
+    'vue/max-len': 'warn', // warn
+    'vue/object-curly-newline': 'off',
+    'vue/quote-props': 'off',
+    '@typescript-eslint/quotes': 'off', // ['warn', 'single'], // TODO: fix
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/html-indent': 'off',
     // eslint - block
     'no-console': ['error', { allow: ['warn', 'error'] }],
     'prefer-destructuring': ['error', { object: true, array: false }],
