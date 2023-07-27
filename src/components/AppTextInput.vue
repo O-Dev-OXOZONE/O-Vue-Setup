@@ -23,11 +23,11 @@ defineProps<{
   isPassword?: boolean
 }>()
 
+const emit = defineEmits<Emits>()
+
 interface Emits {
   (_event: 'update:value', _value: string): void
 }
-
-const emit = defineEmits<Emits>()
 
 const updateValue = (value: Event) => {
   emit('update:value', (value.target as HTMLInputElement).value)

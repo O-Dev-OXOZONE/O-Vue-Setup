@@ -29,7 +29,6 @@ module.exports = {
     '@typescript-eslint/lines-between-class-members': 'off',
     // lint - block
     'semi': ['error', 'never'],
-    '@typescript-eslint/semi': ['error', 'never'],
     'no-unexpected-multiline': 'off',
     'quote-props': ['error', 'consistent'],
     'implicit-arrow-linebreak': 'off',
@@ -37,22 +36,22 @@ module.exports = {
     'operator-linebreak': 'off',
     'arrow-parens': ['error', 'as-needed'],
     'object-curly-newline': 'off',
-    'vue/operator-linebreak': 'off',
     'nonblock-statement-body-position': 'off',
     'curly': 'off',
-    '@typescript-eslint/indent': 'off',
     'no-confusing-arrow': 'off',
-    'vue/max-len': 'warn', // warn
+    '@typescript-eslint/semi': ['error', 'never'],
+    '@typescript-eslint/indent': 'off',
+    '@typescript-eslint/quotes': 'off',
+    'vue/operator-linebreak': 'off',
+    'vue/max-len': 'warn',
     'vue/object-curly-newline': 'off',
     'vue/quote-props': 'off',
-    '@typescript-eslint/quotes': 'off', // ['warn', 'single'], // TODO: fix
     'vue/singleline-html-element-content-newline': 'off',
     'vue/html-indent': 'off',
     // eslint - block
     'no-console': ['error', { allow: ['warn', 'error'] }],
     'prefer-destructuring': ['error', { object: true, array: false }],
     // vue - block
-    'vue/component-api-style': ['error', ['script-setup']],
     'vue/block-lang': [
       'error',
       {
@@ -64,9 +63,59 @@ module.exports = {
         },
       },
     ],
+    'vue/component-api-style': ['error', ['script-setup']],
+    'vue/component-options-name-casing': ['error', 'PascalCase'],
+    'vue/custom-event-name-casing': ['error', 'kebab-case'],
+    'vue/define-emits-declaration': ['error', 'type-based'],
+    'vue/define-macros-order': [
+      'error',
+      {
+        order: ['defineProps', 'defineEmits'],
+      },
+    ],
+    'vue/define-props-declaration': ['error', 'type-based'],
+    'vue/next-tick-style': ['error', 'promise'],
+    // 'vue/no-bare-strings-in-template': 'error', // SW
     'vue/no-empty-component-block': 'error',
+    'vue/no-multiple-objects-in-class': 'error',
+    'vue/no-required-prop-with-default': 'error',
+    // "vue/no-restricted-class" // SW
     'vue/no-restricted-html-elements': ['error', 'b', 'i'],
+    'vue/no-static-inline-styles': [
+      'error',
+      {
+        allowBinding: true,
+      },
+    ],
+    'vue/no-this-in-before-route-enter': 'error',
+    'vue/no-undef-components': 'error',
+    'vue/no-undef-properties': 'error',
+    'vue/no-unused-properties': 'error',
+    'vue/no-unused-refs': 'error',
+    'vue/no-useless-mustaches': 'error',
+    'vue/no-useless-v-bind': 'error',
     'vue/padding-line-between-blocks': ['error', 'never'],
+    'vue/prefer-define-options': 'error',
+    'vue/prefer-separate-static-class': 'error',
     'vue/prefer-true-attribute-shorthand': 'error',
+    'vue/require-macro-variable-name': [
+      'error',
+      {
+        defineProps: 'props',
+        defineEmits: 'emit',
+        defineSlots: 'slots',
+        useSlots: 'slots',
+        useAttrs: 'attrs',
+      },
+    ],
+    'vue/require-typed-ref': 'error', // np so easy
+    'vue/valid-define-options': 'error',
+    'vue/eqeqeq': 'error',
+    'vue/no-console': 'error', // in template part there should be no console
+    'vue/no-constant-condition': 'warn',
+    'vue/no-empty-pattern': 'error',
+    'no-irregular-whitespace': 'error',
+    'vue/no-useless-concat': 'error',
+    'vue/prefer-template': 'error',
   },
 }

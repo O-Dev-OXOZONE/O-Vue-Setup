@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <!-- eslint-disable-next-line vue/no-undef-components -->
     <router-view />
   </div>
 </template>
