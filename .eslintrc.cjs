@@ -5,6 +5,7 @@ module.exports = {
     browser: true,
   },
   extends: [
+    'eslint:recommended',
     '@vue/eslint-config-airbnb-with-typescript',
     'plugin:vue/vue3-recommended',
   ],
@@ -15,19 +16,19 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
     ecmaVersion: 'latest',
-    tsconfigRootDir: __dirname, // needed for tsconfig to be applied to ts files within a dir
+    tsconfigRootDir: __dirname, // Needed for tsconfig to be applied to ts files within a dir
   },
   rules: {
-    // plugins
+    // Plugins
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
-    // off - block
+    // Off - block
     'import/prefer-default-export': 'off',
     'no-plusplus': 'off',
     'no-nested-ternary': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/lines-between-class-members': 'off',
-    // lint - block
+    // Lint - block
     'semi': ['error', 'never'],
     'no-unexpected-multiline': 'off',
     'quote-props': ['error', 'consistent'],
@@ -51,7 +52,7 @@ module.exports = {
     // eslint - block
     'no-console': ['error', { allow: ['warn', 'error'] }],
     'prefer-destructuring': ['error', { object: true, array: false }],
-    // vue - block
+    // Vue - block
     'vue/block-lang': [
       'error',
       {
@@ -108,7 +109,7 @@ module.exports = {
         useAttrs: 'attrs',
       },
     ],
-    'vue/require-typed-ref': 'error', // np so easy
+    'vue/require-typed-ref': 'error', // NP so easy
     'vue/valid-define-options': 'error',
     'vue/eqeqeq': 'error',
     'vue/no-console': 'error', // in template part there should be no console
@@ -117,5 +118,77 @@ module.exports = {
     'no-irregular-whitespace': 'error',
     'vue/no-useless-concat': 'error',
     'vue/prefer-template': 'error',
+    // eslint block
+    'getter-return': 'error',
+    'require-atomic-updates': 'error',
+    'accessor-pairs': 'warn', // not critical
+    'camelcase': [
+      'warn',
+      {
+        properties: 'always',
+        ignoreDestructuring: true,
+        ignoreImports: true,
+        ignoreGlobals: true,
+      },
+    ],
+    'complexity': ['error', 11], // tunned on 3 projects. may be less
+    'consistent-this': ['error', 'that'],
+    'default-param-last': 'error',
+    'func-style': ['error', 'expression'],
+    // you will hate me for this rule
+    'id-length': [
+      'error',
+      {
+        min: 2,
+        exceptions: ['x', 'y', '_'],
+      },
+    ],
+    'logical-assignment-operators': ['error', 'always'],
+    'max-classes-per-file': ['error', 1], // sw-logic, NOT NP
+    'max-depth': ['error', 4],
+    'no-continue': 'off', // it is useful in cycles sometimes
+    'no-div-regex': 'warn',
+    'no-empty-function': 'error', // should be at leas comment
+    'no-empty-static-block': 'error',
+    'no-eq-null': 'error',
+    'no-extra-semi': 'error',
+    'no-invalid-this': 'error',
+    'no-loop-func': 'error',
+    // sw, sorry
+    'no-magic-numbers': [
+      'error',
+      {
+        ignore: [0, 1, 10],
+        ignoreDefaultValues: true,
+        enforceConst: false,
+        detectObjects: true,
+      },
+    ],
+    'no-new-func': 'error',
+    // no-param-reassign - ? from NP
+    'no-redeclare': 'error',
+    'no-throw-literal': 'error',
+    'no-undefined': 'error',
+    // no-underscore-dangle - questionable
+    'no-useless-call': 'error',
+    'prefer-object-has-own': 'error',
+    'require-await': 'error',
   },
+  overrides: [
+    // test files
+    {
+      files: ['__mocks__/**/*.ts', '**/*.test.ts'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'off',
+        'no-empty-function': 'off',
+        'no-magic-numbers': 'off',
+      },
+    },
+    {
+      files: ['.eslintrc*', 'vite.config*'],
+      rules: {
+        'no-magic-numbers': 'off',
+      },
+    },
+  ],
 }

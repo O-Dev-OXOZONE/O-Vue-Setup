@@ -57,3 +57,12 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
    1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
    2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+
+May be useful
+
+- https://www.npmjs.com/package/eslint-plugin-vitest
+- https://www.npmjs.com/package/eslint-plugin-promise
+- https://www.npmjs.com/package/eslint-plugin-sort-keys-fix
+- https://www.npmjs.com/package/eslint-plugin-prefer-arrow
+- https://www.npmjs.com/package/eslint-plugin-i18n-json
+- https://www.npmjs.com/package/eslint-plugin-no-loops
