@@ -66,15 +66,15 @@ module.exports = {
     ],
     'vue/component-api-style': ['error', ['script-setup']],
     'vue/component-options-name-casing': ['error', 'PascalCase'],
-    'vue/custom-event-name-casing': ['error', 'kebab-case'],
-    'vue/define-emits-declaration': ['error', 'type-based'],
+    'vue/custom-event-name-casing': ['error', 'camelCase'],
+    'vue/define-emits-declaration': ['warn', 'type-based'],
     'vue/define-macros-order': [
       'error',
       {
         order: ['defineProps', 'defineEmits'],
       },
     ],
-    'vue/define-props-declaration': ['error', 'type-based'],
+    'vue/define-props-declaration': ['warn', 'type-based'],
     'vue/next-tick-style': ['error', 'promise'],
     // 'vue/no-bare-strings-in-template': 'error', // SW
     'vue/no-empty-component-block': 'error',
@@ -89,7 +89,7 @@ module.exports = {
       },
     ],
     'vue/no-this-in-before-route-enter': 'error',
-    'vue/no-undef-components': 'error',
+    'vue/no-undef-components': ['error', { ignorePatterns: ['router-*'] }],
     'vue/no-undef-properties': 'error',
     'vue/no-unused-properties': 'error',
     'vue/no-unused-refs': 'error',
@@ -120,7 +120,6 @@ module.exports = {
     'vue/prefer-template': 'error',
     // eslint block
     'getter-return': 'error',
-    'require-atomic-updates': 'error',
     'accessor-pairs': 'warn', // not critical
     'camelcase': [
       'warn',
@@ -141,6 +140,7 @@ module.exports = {
       {
         min: 2,
         exceptions: ['x', 'y', '_'],
+        properties: 'never',
       },
     ],
     'logical-assignment-operators': ['error', 'always'],
@@ -148,7 +148,7 @@ module.exports = {
     'max-depth': ['error', 4],
     'no-continue': 'off', // it is useful in cycles sometimes
     'no-div-regex': 'warn',
-    'no-empty-function': 'error', // should be at leas comment
+    'no-empty-function': 'error', // should be at least comment
     'no-empty-static-block': 'error',
     'no-eq-null': 'error',
     'no-extra-semi': 'error',
@@ -165,11 +165,9 @@ module.exports = {
       },
     ],
     'no-new-func': 'error',
-    // no-param-reassign - ? from NP
+    'no-param-reassign': 'off', // error on np
     'no-redeclare': 'error',
     'no-throw-literal': 'error',
-    'no-undefined': 'error',
-    // no-underscore-dangle - questionable
     'no-useless-call': 'error',
     'prefer-object-has-own': 'error',
     'require-await': 'error',
@@ -182,6 +180,12 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': 'off',
         'no-empty-function': 'off',
         'no-magic-numbers': 'off',
+      },
+    },
+    {
+      files: ['__mocks__/**/*.ts'],
+      rules: {
+        'max-classes-per-file': 'off',
       },
     },
     {
