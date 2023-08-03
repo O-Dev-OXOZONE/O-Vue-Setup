@@ -176,10 +176,75 @@ module.exports = {
     // test files
     {
       files: ['__mocks__/**/*.ts', '**/*.test.ts'],
+      plugins: ['vitest'],
+      extends: ['plugin:vitest/all'],
       rules: {
         '@typescript-eslint/no-unused-vars': 'off',
         'no-empty-function': 'off',
         'no-magic-numbers': 'off',
+        // Vitest rules
+        'vitest/consistent-test-filename': [
+          'error',
+          {
+            pattern: '.*\\.test\\.ts$',
+          },
+        ],
+        'vitest/consistent-test-it': [
+          'error',
+          {
+            fn: 'test',
+            withinDescribe: 'test',
+          },
+        ],
+        'vitest/expect-expect': 'off', // sometimes, we reuse the excepts
+        'vitest/max-expects': 'off',
+        'vitest/no-alias-methods': 'error',
+        'vitest/no-commented-out-tests': 'error',
+        // we love each-based tests
+        'vitest/no-conditional-expect': 'off',
+        'vitest/no-conditional-in-test': 'off',
+        'vitest/no-conditional-tests': 'off',
+        'vitest/no-disabled-tests': 'error',
+        'vitest/no-done-callback': 'error',
+        'vitest/no-duplicate-hooks': 'error',
+        'vitest/no-focused-tests': 'error',
+        'vitest/no-hooks': 'off',
+        'vitest/no-identical-title': 'error',
+        'vitest/no-interpolation-in-snapshots': 'error',
+        'vitest/no-large-snapshots': 'error',
+        'vitest/no-mocks-import': 'error',
+        'vitest/no-restricted-matchers': 'off',
+        'vitest/no-standalone-expect': 'error',
+        'vitest/no-test-prefixes': 'error',
+        'vitest/no-test-return-statement': 'error',
+        'vitest/prefer-called-with': 'error',
+        'vitest/prefer-comparison-matcher': 'error',
+        'vitest/prefer-each': 'error',
+        'vitest/prefer-equality-matcher': 'error',
+        'vitest/prefer-expect-resolves': 'error',
+        'vitest/prefer-hooks-in-order': 'error',
+        'vitest/prefer-hooks-on-top': 'error',
+        'vitest/prefer-lowercase-title': [
+          'error',
+          {
+            ignoreTopLevelDescribe: true,
+          },
+        ],
+        'vitest/prefer-mock-promise-shorthand': 'error',
+        'vitest/prefer-spy-on': 'error',
+        'vitest/prefer-strict-equal': 'error',
+        'vitest/prefer-to-be': 'error',
+        'vitest/prefer-to-be-falsy': 'error',
+        'vitest/prefer-to-be-object': 'error',
+        'vitest/prefer-to-be-truthy': 'error',
+        'vitest/prefer-to-contain': 'error',
+        'vitest/prefer-to-have-length': 'error',
+        'vitest/prefer-todo': 'error',
+        'vitest/require-hook': 'off',
+        'vitest/require-top-level-describe': 'off',
+        'vitest/valid-describe-callback': 'off', // we use async describes a lot
+        'vitest/valid-expect': 'error',
+        'vitest/valid-title': 'error',
       },
     },
     {

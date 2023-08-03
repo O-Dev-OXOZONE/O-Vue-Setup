@@ -10,11 +10,11 @@ describe('AppTextInput', () => {
       isPassword: false,
     },
   })
-  it('show label', () => {
+  test('show label', () => {
     expect(wrapper.text()).toContain('Test Label')
   })
-  it('value emitted', () => {
+  test('value emitted', () => {
     wrapper.find('input').setValue('new text')
-    expect(wrapper.emitted('update:value')).toEqual([['new text']])
+    expect(wrapper.emitted('update:value')).toStrictEqual([['new text']])
   })
 })

@@ -12,7 +12,7 @@ describe('LoginForm', () => {
     },
   })
 
-  it('input count', () => {
+  test('input count', () => {
     expect(wrapper.findAll('.my-stub')).toHaveLength(2)
   })
 })

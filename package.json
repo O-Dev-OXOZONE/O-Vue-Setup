@@ -31,6 +31,7 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-vitest": "^0.2.8",
     "eslint-plugin-vue": "^9.15.1",
     "jsdom": "^22.1.0",
     "postcss": "^8.4.24",
