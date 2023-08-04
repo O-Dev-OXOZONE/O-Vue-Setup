@@ -1,3 +1,4 @@
+<!-- eslint-disable vue-scoped-css/enforce-style-type -->
 <template>
   <div class="app">
     <!-- eslint-disable-next-line vue/no-undef-components -->
@@ -23,6 +24,7 @@ onUnmounted(() => {
   window.removeEventListener('resize', appHeight)
 })
 </script>
+<!-- eslint-disable-next-line vue-scoped-css/enforce-style-type -->
 <style lang="scss">
 @tailwind base;
 @tailwind components;

@@ -9,6 +9,7 @@ module.exports = {
     '@vue/eslint-config-airbnb-with-typescript',
     'plugin:vue/vue3-recommended',
     'plugin:@intlify/vue-i18n/recommended',
+    'plugin:vue-scoped-css/all',
   ],
   plugins: ['simple-import-sort'],
   // https://eslint.vuejs.org/user-guide/#how-to-use-a-custom-parser
@@ -45,6 +46,12 @@ module.exports = {
     '@intlify/vue-i18n/no-unknown-locale': 'error',
     '@intlify/vue-i18n/no-unused-keys': 'error',
     '@intlify/vue-i18n/prefer-sfc-lang-attr': 'error',
+    'vue-scoped-css/enforce-style-type': 'error',
+    'vue-scoped-css/no-parsing-error': 'error',
+    'vue-scoped-css/no-unused-keyframes': 'error',
+    'vue-scoped-css/no-unused-selector': 'error',
+    'vue-scoped-css/no-deprecated-v-enter-v-leave-class': 'error',
+    'vue-scoped-css/require-selector-used-inside': 'error',
     // Off - block
     'import/prefer-default-export': 'off',
     'no-plusplus': 'off',
