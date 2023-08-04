@@ -2,14 +2,14 @@
   <form @submit.prevent="submit">
     <AppTextInput
       v-model:value="login"
-      label="Login"
+      :label="$t('common.login')"
     />
     <AppTextInput
       v-model:value="password"
-      label="Password"
+      :label="$t('common.password')"
       is-password
     />
-    <button type="submit">Ok</button>
+    <button type="submit">{{ $t('common.ok') }}</button>
     <div v-if="value">
       {{ value }}
     </div>

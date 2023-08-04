@@ -8,20 +8,43 @@ module.exports = {
     'eslint:recommended',
     '@vue/eslint-config-airbnb-with-typescript',
     'plugin:vue/vue3-recommended',
+    'plugin:@intlify/vue-i18n/recommended',
   ],
   plugins: ['simple-import-sort'],
   // https://eslint.vuejs.org/user-guide/#how-to-use-a-custom-parser
   parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser',
+    parser: { ts: '@typescript-eslint/parser', json: 'jsonc-eslint-parser' },
     sourceType: 'module',
     ecmaVersion: 'latest',
     tsconfigRootDir: __dirname, // Needed for tsconfig to be applied to ts files within a dir
+  },
+  settings: {
+    'vue-i18n': {
+      // localeDir: './src/assets/translations/',
+      localeDir: {
+        pattern: './src/assets/translations/*.{json,json5,yaml,yml}', // extension is glob formatting!
+        localeKey: 'file', // or 'path' or 'key'
+      },
+    },
   },
   rules: {
     // Plugins
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+    '@intlify/vue-i18n/key-format-style': [
+      'error',
+      'camelCase',
+      {
+        allowArray: true,
+        splitByDots: true,
+      },
+    ],
+    '@intlify/vue-i18n/no-duplicate-keys-in-locale': 'error',
+    '@intlify/vue-i18n/no-missing-keys-in-other-locales': 'error',
+    '@intlify/vue-i18n/no-unknown-locale': 'error',
+    '@intlify/vue-i18n/no-unused-keys': 'error',
+    '@intlify/vue-i18n/prefer-sfc-lang-attr': 'error',
     // Off - block
     'import/prefer-default-export': 'off',
     'no-plusplus': 'off',

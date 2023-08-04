@@ -12,7 +12,7 @@ The setup of the projects on Vue js framework with descriptions, linters, tests 
 - [x] Linter
 - [ ] Pinia
 - [ ] SVG-loader
-- [ ] i18n
+- [x] i18n
 - [ ] odevlib api integrations
 
 TODO in the future:

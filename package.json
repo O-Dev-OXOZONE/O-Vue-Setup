@@ -19,9 +19,11 @@
   ],
   "dependencies": {
     "vue": "^3.2.47",
+    "vue-i18n": "^9.2.2",
     "vue-router": "^4.2.2"
   },
   "devDependencies": {
+    "@intlify/eslint-plugin-vue-i18n": "^2.0.0",
     "@types/node": "^20.3.3",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vitest/coverage-istanbul": "^0.33.0",
@@ -29,11 +31,12 @@
     "@vue/eslint-config-airbnb-with-typescript": "^7.0.0",
     "@vue/test-utils": "^2.4.0",
     "autoprefixer": "^10.4.14",
-    "eslint": "^8.45.0",
+    "eslint": "^8.46.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-vitest": "^0.2.8",
     "eslint-plugin-vue": "^9.15.1",
     "jsdom": "^22.1.0",
+    "jsonc-eslint-parser": "^2.3.0",
     "postcss": "^8.4.24",
     "pre-commit": "^1.2.2",
     "prettier": "^3.0.0",
