@@ -45,10 +45,10 @@ Additional useful testing commands may be found here: https://github.com/O-Dev-O
 - [x] Tailwind
 - [x] Tests
 - [x] Linter
-- [ ] Pinia
+- [x] Pinia
 - [x] SVG-loader
 - [x] i18n
-- [ ] odevlib api integrations
+- [x] odevlib api integrations
 
 ### TODO in the future (low priority):
 
