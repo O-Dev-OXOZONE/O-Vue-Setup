@@ -1,0 +1,22 @@
+version: '3'
+
+networks:
+  traefik:
+    external: true
+
+services:
+  frontend-prod:
+    build:
+      context: .
+      dockerfile: ./docker/prod/Dockerfile
+      args:
+        VITE_API_URL: https://api.test.the-o.co
+    image: $CI_REGISTRY_IMAGE/frontend:$CI_COMMIT_SHA
+    restart: unless-stopped
+    expose:
+      - '80'
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.frontend-prod.rule=Host(`test.the-o.co`)
+    networks:
+      - traefik

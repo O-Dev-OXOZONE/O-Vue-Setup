@@ -143,6 +143,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.yml
 
 package-lock.json
 package.json
