@@ -9,8 +9,7 @@ The setup of the projects on Vue js framework with descriptions, linters, tests 
 ```bash
 git remote add upstream https://github.com/O-Dev-OXOZONE/O-Vue-Setup.git
 
-git pull upstream main
-
+git pull upstream main --allow-unrelated-histories
 
 git push origin main
 ```
