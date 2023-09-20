@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import { createI18n } from 'vue-i18n'
 
-import en from '@/assets/translations/en.json'
-import ru from '@/assets/translations/ru.json'
+import { en } from '@/assets/translations/en'
+import { ru } from '@/assets/translations/ru'
 import { router } from '@/router/index'
 
 import App from './App.vue'

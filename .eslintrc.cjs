@@ -15,7 +15,8 @@ module.exports = {
   // https://eslint.vuejs.org/user-guide/#how-to-use-a-custom-parser
   parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: { ts: '@typescript-eslint/parser', json: 'jsonc-eslint-parser' },
+    project: './tsconfig.json',
+    parser: '@typescript-eslint/parser',
     sourceType: 'module',
     ecmaVersion: 'latest',
     tsconfigRootDir: __dirname, // Needed for tsconfig to be applied to ts files within a dir
@@ -46,6 +47,13 @@ module.exports = {
     '@intlify/vue-i18n/no-unknown-locale': 'error',
     '@intlify/vue-i18n/no-unused-keys': 'error',
     '@intlify/vue-i18n/prefer-sfc-lang-attr': 'error',
+    '@intlify/vue-i18n/no-raw-text': [
+      'warn',
+      {
+        ignorePattern: '^[^a-zA-Z]+$', // non-letter chars
+        ignoreText: [''],
+      },
+    ],
     'vue-scoped-css/enforce-style-type': 'error',
     'vue-scoped-css/no-parsing-error': 'error',
     'vue-scoped-css/no-unused-keyframes': 'error',
@@ -53,6 +61,8 @@ module.exports = {
     'vue-scoped-css/no-deprecated-v-enter-v-leave-class': 'error',
     'vue-scoped-css/require-selector-used-inside': 'error',
     // Off - block
+    'import/order': 'off',
+    'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
     'no-plusplus': 'off',
     'no-nested-ternary': 'off',

@@ -145,3 +145,5 @@ dist-ssr
 *.sw?
 
 package-lock.json
+package.json
+tsconfig*.json

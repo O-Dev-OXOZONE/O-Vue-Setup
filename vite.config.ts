@@ -3,11 +3,12 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import { defineConfig } from 'vite'
 import eslintPlugin from 'vite-plugin-eslint'
+import svgLoader from 'vite-svg-loader'
 import { configDefaults } from 'vitest/config'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), eslintPlugin()],
+  plugins: [vue(), eslintPlugin(), svgLoader({ defaultImport: 'component' })],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -22,6 +23,7 @@ export default defineConfig({
       provider: 'istanbul', // or 'istanbul'
       all: true, // shows the coverage for entire project
       exclude: [
+        // @ts-ignore
         ...configDefaults.coverage.exclude,
         '{postcss,tailwind}.config.*',
         'src/router/*',

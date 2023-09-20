@@ -46,7 +46,7 @@ Additional useful testing commands may be found here: https://github.com/O-Dev-O
 - [x] Tests
 - [x] Linter
 - [ ] Pinia
-- [ ] SVG-loader
+- [x] SVG-loader
 - [x] i18n
 - [ ] odevlib api integrations
 
