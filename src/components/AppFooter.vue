@@ -1,6 +1,6 @@
 <template>
   <footer class="flex gap-2">
-    Made my ООО О
+    Made by ООО О
     <Logo class="h-[1rem] w-[1rem]" />
   </footer>
 </template>
