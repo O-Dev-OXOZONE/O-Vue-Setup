@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 
 export const getToken = () => {
   const token = document.cookie.match(/odev-token=([^ ;]*)/)
@@ -45,7 +45,7 @@ export const apiClient = axios.create({
 
 apiClient.interceptors.request.use(request => {
   const token = getToken()
-  if (token && request.url !== '/login/') {
+  if (token && !request.url?.includes('sign_in')) {
     request.headers.Authorization = `Token ${token}`
   }
   return request
@@ -65,26 +65,31 @@ apiClient.interceptors.response.use(
 )
 
 // api methods return any type because of AxiosInstance response intercepting
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export class HTTP {
-  static get<T>(endpoint = '', params = {}): Promise<T> {
-    return apiClient.get(`${endpoint}`, params)
+  static get<T>(endpoint: string, params: AxiosRequestConfig = {}): Promise<T> {
+    return apiClient.get(endpoint, params)
   }
 
-  static post<T>(endpoint = '', data = {}, config = {}): Promise<T> {
-    return apiClient.post(`${endpoint}`, data, config)
+  static post<T, DataType = T>(
+    endpoint: string,
+    data: DataType,
+    config: AxiosRequestConfig = {},
+  ): Promise<T> {
+    return apiClient.post(endpoint, data, config)
   }
 
-  static patch<T>(endpoint = '', data = {}): Promise<T> {
-    return apiClient.patch(`${endpoint}`, data)
+  static patch<T, DataType = T>(endpoint: string, data: DataType): Promise<T> {
+    return apiClient.patch(endpoint, data)
   }
 
-  static put<T>(endpoint = '', data = {}): Promise<T> {
-    return apiClient.put(`${endpoint}`, data)
+  static put<T, DataType = T>(endpoint: string, data: DataType): Promise<T> {
+    return apiClient.put(endpoint, data)
   }
 
-  static delete<T>(endpoint = '', params = {}): Promise<T> {
+  static delete<T>(
+    endpoint: string,
+    params: AxiosRequestConfig = {},
+  ): Promise<T> {
     return apiClient.delete(`${endpoint}`, params)
   }
 }
-/* eslint-enable @typescript-eslint/no-explicit-any */
